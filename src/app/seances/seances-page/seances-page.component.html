@@ -1,0 +1,8 @@
+<mat-card id="listeSeance">
+    <h3>{{seance.salle.nom}}</h3>
+    <h4>Le : <b>{{seance.date}}</b></h4>
+    <mat-card-title>{{seance.film.titre}}</mat-card-title>
+    <mat-card-subtitle>{{seance.film.dateSortie}}</mat-card-subtitle>
+    <mat-card-content> <img src="{{seance.film.image}}" alt=""></mat-card-content>
+    <mat-card-actions>  <button mat-raised-button color="primary" type="submit" (click)="reserverSeance()">Reserver</button></mat-card-actions>
+</mat-card>

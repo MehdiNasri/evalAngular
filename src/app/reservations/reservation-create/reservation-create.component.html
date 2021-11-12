@@ -1,0 +1,8 @@
+<h2>Reserver :</h2>
+<form [formGroup]="reservationForm" id="formReservation" (ngSubmit)="reserverSeance()">
+    <mat-form-field appearance="fill">
+        <mat-label>Nom du client</mat-label>
+        <input formControlName="nom" matInput>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Valider</button>
+</form>

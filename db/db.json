@@ -1,0 +1,100 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "nom": "Delevan",
+      "prenom": "Gorge",
+      "age": 30,
+      "email": "gorge@gmail.com"
+    },
+    {
+      "id": 2,
+      "nom": "Goloa",
+      "prenom": "Jean",
+      "age": 21,
+      "email": "jean@gmail.com"
+    },
+    {
+      "nom": "azeaze",
+      "prenom": "azeaze",
+      "email": "azeaze@gmail.com",
+      "age": "30",
+      "id": 3
+    },
+    {
+      "nom": "aaa",
+      "prenom": "eeee",
+      "email": "eee@gmail.com",
+      "age": "20",
+      "id": 4
+    }
+  ],
+  "Films": [
+    {
+      "id": 1,
+      "titre": "Batman Begins",
+      "description": "C'est Batman qui sauve le monde ....",
+      "image": "https://m.media-amazon.com/images/M/MV5BOTY4YjI2N2MtYmFlMC00ZjcyLTg3YjEtMDQyM2ZjYzQ5YWFkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+      "note": 8.7,
+      "dateSortie": "2005"
+    },
+    {
+      "id": 2,
+      "titre": "Batman v Superman: Dawn of Justice",
+      "description": "C'est Batman qui sauve le monde contre superman cette fois ci ....",
+      "image": "https://m.media-amazon.com/images/M/MV5BYThjYzcyYzItNTVjNy00NDk0LTgwMWQtYjMwNmNlNWJhMzMyXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+      "note": 7.3,
+      "dateSortie": "2016"
+    }
+  ],
+  "salles": [
+    {
+      "id": 1,
+      "nom" : "Salle 1"
+    },
+    {
+      "id": 2,
+      "nom": "Salle 2"
+    }
+  ],
+  "seances": [
+    {
+      "id": 1,
+      "salleId":1,
+      "filmId": 1,
+      "nbPlaces": 28,
+      "date": "03/05/2021"
+    },
+    {
+      "id": 2,
+      "salleId":2,
+      "filmId": 2,
+      "nbPlaces": 25,
+      "date": "09/05/2021"
+    },
+    {
+      "id": 3,
+      "salleId":1,
+      "filmId": 1,
+      "nbPlaces": 30,
+      "date": "02/05/2021"
+    },
+    {
+      "id": 4,
+      "salleId":2,
+      "filmId": 2,
+      "nbPlaces": 30,
+      "date": "10/05/2021"
+    }
+  ],
+  "reservations": [
+    {
+      "idClient": 1,
+      "idSeance": 1
+    },
+    {
+      "idClient": 2,
+      "idSeance": 3
+    }
+  ]
+}
