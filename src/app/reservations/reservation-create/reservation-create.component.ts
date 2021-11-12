@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Client } from 'src/app/shared/models/client';
 import { Reservation } from 'src/app/shared/models/reservation';
 import { ClientService } from 'src/app/shared/services/client.service';
+import { ReservationService } from 'src/app/shared/services/reservation.service';
 
 @Component({
   selector: 'app-reservation-create',
@@ -15,15 +16,18 @@ export class ReservationCreateComponent implements OnInit {
   clients!:Client[];
   ClientReserver!: Client;
   nom!:string
-  reservation!:Reservation;
-  constructor(private clientService:ClientService,private route:ActivatedRoute) { 
+  reservation!:Reservation
+  constructor(private clientService:ClientService,private route:ActivatedRoute,private reservationService:ReservationService) { 
     this.reservationForm = new FormGroup({
       nom: new FormControl(""),
+      
     }
+   
     )
   }
 
   ngOnInit(): void {
+    
   }
   
 
@@ -32,14 +36,21 @@ export class ReservationCreateComponent implements OnInit {
     //recupération de tout les utilisateurs pour trouver celui dont le nom correspond
     this.clientService.getClients()
     .subscribe((clients:Client[])=>{
-      this.clients = clients;
+      this.clients = [...clients];
       console.log(this.reservationForm.value.nom)
       //filtre de la liste des client pour trouver le bon par rapport au nom envoyé par le form
       this.ClientReserver = this.clients.filter(x => x.nom === this.reservationForm.value.nom)[0];
       console.log(this.ClientReserver)
-      this.reservation.idClient = this.ClientReserver.id
-      this.reservation.idSeance = this.route.snapshot.params['id'];
-      console.log(this.reservation)
+      //création de la reservation
+      this.reservation = {
+        idClient:this.ClientReserver.id,
+        idSeance:parseInt(this.route.snapshot.params['id'])
+      }
+      //envoie de la reservation
+      this.reservationService.createReservation(this.reservation)
+      .subscribe((_)=>{
+        console.log("ok")
+      })
     });
    
   }

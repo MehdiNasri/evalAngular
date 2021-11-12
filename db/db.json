@@ -50,7 +50,7 @@
   "salles": [
     {
       "id": 1,
-      "nom" : "Salle 1"
+      "nom": "Salle 1"
     },
     {
       "id": 2,
@@ -60,28 +60,28 @@
   "seances": [
     {
       "id": 1,
-      "salleId":1,
+      "salleId": 1,
       "filmId": 1,
       "nbPlaces": 28,
       "date": "03/05/2021"
     },
     {
       "id": 2,
-      "salleId":2,
+      "salleId": 2,
       "filmId": 2,
       "nbPlaces": 25,
       "date": "09/05/2021"
     },
     {
       "id": 3,
-      "salleId":1,
+      "salleId": 1,
       "filmId": 1,
       "nbPlaces": 30,
       "date": "02/05/2021"
     },
     {
       "id": 4,
-      "salleId":2,
+      "salleId": 2,
       "filmId": 2,
       "nbPlaces": 30,
       "date": "10/05/2021"
@@ -89,12 +89,19 @@
   ],
   "reservations": [
     {
+      "id": 1,
       "idClient": 1,
       "idSeance": 1
     },
     {
+      "id": 2,
       "idClient": 2,
       "idSeance": 3
+    },
+    {
+      "idClient": 1,
+      "idSeance": 2,
+      "id": 3
     }
   ]
 }
