@@ -102,6 +102,11 @@
       "idClient": 1,
       "idSeance": 2,
       "id": 3
+    },
+    {
+      "idClient": 2,
+      "idSeance": 1,
+      "id": 4
     }
   ]
 }

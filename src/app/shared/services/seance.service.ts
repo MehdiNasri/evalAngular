@@ -19,6 +19,13 @@ export class SeanceService {
     return this.http.get<Seance[]>(`${environment.apiUrl}/seances`);
   }
 
+  
+  //methode pour aller chercher les seances dans l'api json
+  getSeanceById(seanceId:number): Observable<Seance> {
+    // récupération via client Http Angular
+    return this.http.get<Seance>(`${environment.apiUrl}/seances/${seanceId}`);
+  }
+
   //recupération de la salle par rapport a son ID contenu dans la seance
   getSalleById(salleId:number):Observable<Salle>{
     return this.http.get<Salle>(`${environment.apiUrl}/salles/${salleId}`);

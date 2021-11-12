@@ -5,6 +5,8 @@ import { ClientsComponent } from './clients/clients.component';
 import { FilmDetailComponent } from './films/film-detail/film-detail.component';
 import { FilmsComponent } from './films/films.component';
 import { ReservationCreateComponent } from './reservations/reservation-create/reservation-create.component';
+import { ReservationsPageComponent } from './reservations/reservations-page/reservations-page.component';
+import { ReservationsComponent } from './reservations/reservations.component';
 import { SeancesComponent } from './seances/seances.component';
 
 //route de l'application
@@ -27,15 +29,18 @@ const routes: Routes = [
       {path:":id",component:FilmDetailComponent}
     ]
   },
-  {
+  {//route vers les seances
     path:"seances",
     children: [
       {path:"",component:SeancesComponent}
     ]
   },
-  {
+  {//route pour les reservations
     path:"reservations",
     children:[
+      {
+        path:"",component:ReservationsComponent
+      },
       {
         path:"create/:id",component:ReservationCreateComponent
       }

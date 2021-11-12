@@ -14,4 +14,10 @@ export class ReservationService {
 createReservation(reservation: Reservation): Observable<Reservation>{
   return this.http.post<Reservation>(`${environment.apiUrl}/reservations`, reservation);
 }
+
+//methode pour aller chercher les reservations dans l'api json
+getReservations(): Observable<Reservation[]> {
+  // récupération via client Http Angular
+  return this.http.get<Reservation[]>(`${environment.apiUrl}/reservations`);
+}
 }

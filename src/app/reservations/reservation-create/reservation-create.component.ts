@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Client } from 'src/app/shared/models/client';
 import { Reservation } from 'src/app/shared/models/reservation';
 import { ClientService } from 'src/app/shared/services/client.service';
@@ -17,7 +17,7 @@ export class ReservationCreateComponent implements OnInit {
   ClientReserver!: Client;
   nom!:string
   reservation!:Reservation
-  constructor(private clientService:ClientService,private route:ActivatedRoute,private reservationService:ReservationService) { 
+  constructor(private clientService:ClientService,private route:ActivatedRoute,private reservationService:ReservationService,private router:Router) { 
     this.reservationForm = new FormGroup({
       nom: new FormControl(""),
       
@@ -44,12 +44,13 @@ export class ReservationCreateComponent implements OnInit {
       //création de la reservation
       this.reservation = {
         idClient:this.ClientReserver.id,
-        idSeance:parseInt(this.route.snapshot.params['id'])
+        idSeance:parseInt(this.route.snapshot.params['id']),
+        
       }
       //envoie de la reservation
       this.reservationService.createReservation(this.reservation)
       .subscribe((_)=>{
-        console.log("ok")
+        this.router.navigate(['../reservations'])
       })
     });
    

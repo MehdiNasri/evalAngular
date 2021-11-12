@@ -15,6 +15,12 @@ export class ClientService {
     // récupération via client Http Angular
     return this.http.get<Client[]>(`${environment.apiUrl}/clients`);
   }
+
+  //methode pour aller chercher un client par son ID dans l'api json
+  getClientById(clientId:number): Observable<Client> {
+    // récupération via client Http Angular
+    return this.http.get<Client>(`${environment.apiUrl}/clients/${clientId}`);
+  }
 //methode pour créer un client dans notre db json
   createClient(client: Client): Observable<Client>{
     return this.http.post<Client>(`${environment.apiUrl}/clients`, client);

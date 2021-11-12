@@ -1,1 +1,8 @@
-<p>reservations-page works!</p>
+<mat-card id="listeClients">
+    <div *ngIf="reservation.client">
+    <p><b> Nom : </b> {{reservation.client.nom}} <b> Prenom : </b> {{reservation.client.prenom}} <b> Age : </b>{{reservation.client.age}}<b> Email : </b>{{reservation.client.email}} </p>
+    </div>
+    <div *ngIf="reservation.seance">
+        <p><b> Seance du : </b> {{reservation.seance.date}} <b> Salle : </b> {{reservation.seance.salle.nom}} <b> Titre du film : </b>{{reservation.seance.film.titre}} </p>
+    </div>
+</mat-card>
